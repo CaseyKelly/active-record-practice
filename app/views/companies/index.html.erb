@@ -1,3 +1,7 @@
+<p>
+  <%= link_to "Create Company", new_company_path %>
+</p>
+
 <table border="1">
   <tr>
     <th>Name</th>
@@ -19,11 +23,8 @@
         <td><%= company.start_date %></td>
         <td><%= company.product %></td>
         <td><%= company.industry %></td>
+        <td><%= link_to "Create Employee", new_company_employee_path(company) %></td>
       </tr>
       <% end %>
       </tbody>
 </table>
-
-<p>
-  <%= link_to "Create Company", new_company_path %>
-</p>
