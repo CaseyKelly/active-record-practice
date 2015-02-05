@@ -1,0 +1,61 @@
+<p>
+  <b>Name</b>
+  <%= @company.name %>
+</p>
+
+<p>
+  <b>Suffix</b>
+  <%= @company.suffix %>
+</p>
+
+<p>
+  <b>Catchphrase</b>
+  <%= @company.catch_phrase %>
+</p>
+
+<p>
+  <b>Email</b>
+  <%= @company.email %>
+</p>
+
+<p>
+  <b>Start Date</b>
+  <%= @company.start_date %>
+</p>
+
+<p>
+  <b>Product</b>
+  <%= @company.product %>
+</p>
+
+<p>
+  <b>Industry</b>
+  <%= @company.industry %>
+</p>
+
+<br><br>
+<b><u><%= @company.name %>'s Employees</b></u>
+<p>
+<table border="1">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Company ID</th>
+    <th>Title</th>
+  </tr>
+
+  <tbody>
+    <% @company.employees.each do |employee| %>
+      <tr>
+        <td><%= employee.first_name %></td>
+        <td><%= employee.last_name %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.company_id %></td>
+        <td><%= employee.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p>
+<%= link_to 'Back', companies_path %>
