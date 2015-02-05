@@ -8,6 +8,19 @@ class CompaniesController < ApplicationController
       @company = Company.find(params[:id])
     end
 
+    def new
+      @company = Company.new
+    end
+
+    def create
+      @company = Company.new(company_params)
+      if @company.save
+        redirect_to companies_path
+      else
+        render @company
+      end
+    end
+
     private
     def company_params
        params.require(:company).permit(:name, :suffix, :catch_phrase, :email, :start_date, :product, :industry)
